@@ -21,7 +21,7 @@ create table mem(
 	phone1 number not null,
 	phone2 number not null,
 	phone3 number not null,
-	email varchar2(20)			
+	email varchar2(30)			
 );
 
 insert into mem(no, name, id, password, repassword, phone1, phone2, phone3) values(mseq.nextval, '¾îµå¹Î', 'admin','1234', '1234', 010,1111,1111);

@@ -3,32 +3,48 @@
 
 <%@ include file= "top.jsp" %>
 
+<link href="style.css" type="text/css" rel="stylesheet">
 
-<form action="findpwdPro.jsp" method="post">
-	<table border ="1" align="center">
-		<tr>
-			<td bgcolor="yellow" align="center">ID</td>
-			<td><input type="text" name="id" value=""></td>
-		</tr>
-		<tr>
-			<td bgcolor="yellow" align="center">이름</td>
-			<td><input type="text" name="name" value=""></td>
-		</tr>
-		<tr>
-			<td bgcolor="yellow" align="center">핸드폰번호</td>
-			<td>
-				<input type="text" name="phone1" maxlength="3" size="3" value="">
-					-
-				<input type="text" name="phone2" maxlength="4" size="4" value="">
-					-
-				<input type="text" name="phone3" maxlength="4" size="4" value="">
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2" bgcolor="yellow" align="center">
-				<button onClick="return findpw()" formmethod="post">비밀번호 찾기</button>
-			</td>
-		</tr>
+	<div class="card-body">
+		<form action="findidPro.jsp" method="post">
+			<div class="row">
+				<div class="col-4">아이디</div>
+				<div class="col-4"><input type="text" name="id" class="btn btn-secondary"></div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-4">이름</div>
+				<div class="col-4"><input type="text" name="name" class="btn btn-secondary"></div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-4">핸드폰 번호</div>
+				<div class="col-2">
+					<select name="phone1" class="btn btn-secondary">
+					<option value="010">010</option>
+					<option value="011">011</option>
+					</select>
+				</div>
+				<div class="col-2">
+					<input type="text" name="phone2" size="4" maxlength="4" value="" class="btn btn-secondary">
+				</div>
+				<div class="col-2">
+					<input type="text" name="phone3" size="4" maxlength="4" value="" class="btn btn-secondary">
+				</div>
+				<div class="col-2">
+				예) 011-0000-0000
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-6">
+					<button onClick="return findpw()" class="btn btn-secondary">비밀번호 찾기</button>
+				</div>
+				<div class="col-6">
+					<button type="reset" onClick="cansel()" class="btn btn-secondary">취소</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+<%@ include file= "footer.jsp" %>
+
+
 		
-	</table>
-</form>

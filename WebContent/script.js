@@ -65,7 +65,7 @@ function findid(){
 
 function findpw(){
 	if($("input[name='id']").val()==""){
-		alert("id를 입력하세요");
+		alert("아이디를 입력하세요");
 		return false;
 	}
 	
@@ -87,11 +87,14 @@ function findpw(){
 		return false;
 	}
 }
-
+function cansel(){
+	alert("취소되었습니다.")
+	location.href="main.jsp"
+}
 function writeSave(){
 	
 	if($('input[name="id"]').val()==""){
-		alert("id를 입력하세요");
+		alert("아이디를 입력하세요");
 		$('input[name="id"]').focus();
 		return false;
 	}
@@ -117,18 +120,42 @@ function writeSave(){
 		alert("비번 불일치");
 		return false;
 	}
+	
+	if($("input[name='name']").val()==""){
+		alert("이름을 입력하세요");
+		return false;
+	}
+	
+	if($("input[name='phone1']").val()==""){
+		alert("핸드폰번호를 입력하세요");
+		return false;
+	}
+	if($("input[name='phone2']").val()==""){
+		alert("핸드폰번호를 입력하세요");
+		return false;
+	}
+	if($("input[name='phone3']").val()==""){
+		alert("핸드폰번호를 입력하세요");
+		return false;
+	}
+	
+	if($("input[name='email']").val()==""){
+		alert("E-Mail을 입력하세요");
+		return false;
+	}
 
 }
+
 
 function passwd_keyup(){ // 키보드 올라올떄 마다
 	
 	if($('input[name=password]').val() == $('input[name=repassword]').val()){
-		$('#pwmessage').html('<font color=red>비번일치</font>');
+		$('#pwmessage').html('<font color=red>비밀번호 일치</font>');
 		$('#pwmessage').show();
 	
 	}
 	else{
-		$('#pwmessage').html('<font color=red>비번 불일치</font>');
+		$('#pwmessage').html('<font color=red>비밀번호 불일치</font>');
 		$('#pwmessage').show();
 
 	}
@@ -138,43 +165,46 @@ function passwd_keyup(){ // 키보드 올라올떄 마다
 
 function duplicate(){
 	
-	isCheck = true;
-	isChange = false; // 원래대로 되돌리겠다.
-	
-	$.ajax({
-		url : "id_check_proc.jsp",
-		data : ({
-				userid:$('input[name="id"]').val() // userid=kim,hong 담겠다.
+		isCheck = true;
+		isChange = false; // 원래대로 되돌리겠다.
+		$.ajax({
+			url : "id_check_proc.jsp",
+			data : {
+				userid:$('input[name="id"]').val() // userid=kim,hong 담겠다.		
+			},
+			success : function(data){ // yes 나  no 자리들어옴
 				
-		}),
-		success : function(data){ // yes 나  no 자리들어옴
+				if($('input[name="id"]').val() == ""){
+					$('#idmessage').html('<font color=red>아이디 입력 누락하였습니다.</font>');
+					$('#idmessage').show();
+				}
+				else if($.trim(data) == 'YES'){ // trim : data의 값의 여백을 지움(앞뒤로 다 )
+					$('#idmessage').html('<font color=red>사용 가능합니다.</font>');
+					$('#idmessage').show();
+					use = "possible";
+				}
+				else{
+					$('#idmessage').html('<font color=red>이미 사용중인 아이디 입니다.</font>');
+					$('#idmessage').show();
+					use = "impossible";
+				}	
+			},
+	        error: function(request,status,error) {
+	            console.log(request);
+	            console.log(status);
+	            console.log(error);
+	        }
 			
-			if($('input[name="id"]').val() == ""){
-				$('#idmessage').html('<font color=red>id 입력 누락</font>');
-				$('#idmessage').show();
-			}
-			else if($.trim(data) == 'YES'){ // trim : data의 값의 여백을 지움(앞뒤로 다 )
-				$('#idmessage').html('<font color=red>사용 가능합니다.</font>');
-				$('#idmessage').show();
-				use = "possible";
-			}
-			else{
-				$('#idmessage').html('<font color=red>이미 사용중인 아이디 입니다.</font>');
-				$('#idmessage').show();
-				use = "impossible";
-			}	
-		}
-	}); // ajax 중복체크 박스 옆에만 변함
-
-
-
+		}); // ajax 중복체크 박스 옆에만 변함
 }
+	
+
 
 
 function pwcheck(){
 	//alert("pwcheck()");
 	
-	var pw = document.forms[0].password.value; // abc 1234
+	var pw = $("input[name='password']").val(); // abc 1234
 	
 	var regexp = /^[a-z0-9]{3,8}$/i; // < ^< 시작 $ < 끝 i< 대소문자 구별하지않는다.  abc 1234
 	
@@ -196,7 +226,16 @@ function pwcheck(){
 	// search() : 위치를 리턴 , 못찾으면 -1 리턴
 }
 
+$("#slideshow > div:gt(0)").hide();
 
+setInterval(function() { 
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  3000);
 
 
 

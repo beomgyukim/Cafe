@@ -6,3 +6,5 @@
     <div>
     	<img src="<%= request.getContextPath() %>/img/main.jpg" width="700">
     </div>
+    
+    <%@ include file= "footer.jsp" %>
