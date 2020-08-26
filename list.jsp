@@ -13,6 +13,9 @@
 			text-align: center;
 			
 		}
+		.listbox td{
+			text-align : center;
+		}
 	</style>
  
  
