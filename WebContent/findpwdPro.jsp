@@ -15,6 +15,7 @@
     	MemberDao mdao = MemberDao.getInstance();
     	MemberBean mb = mdao.getMemberpw(id,name,phone1,phone2,phone3);
     	
+    	
     	String msg = "";
     	String url = "";
     	url = "login.jsp";

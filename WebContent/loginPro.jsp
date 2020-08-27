@@ -17,13 +17,15 @@
 
     	if(mb != null){
     		String _id = mb.getId();
+    		String _name = mb.getName();
     		int _no = mb.getNo();
     		
     		msg = mb.getName()+"님 반갑습니다.";
     		
     		session.setAttribute("memid", _id);
     		session.setAttribute("memno", _no);
-    		
+    		session.setAttribute("memname", _name);
+ 	
     		url = "main.jsp";
     	}
     	else{

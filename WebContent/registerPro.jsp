@@ -19,14 +19,10 @@
 	if(cnt>0){
 		msg = "가입 성공";
 		url = request.getContextPath() + "/main.jsp";
-		//http://localhost:8080/Minimall/main.jsp
 	}
 	else{
 		msg = "가입 실패";
-		//surl = request.getContextPath() + "/myshop/member/register.jsp";
 		url = "register.jsp";
-		//http://localhost:8080/Minimall/myshop/member/register.jsp
-		
 	}
 %>
 	<script	type="text/javascript">

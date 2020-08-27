@@ -10,21 +10,9 @@ $(function(){
  		isChange = true;
  		use = "";
 	});
-	
+
 });
 
-/*function main_loca(){
-	
-	const gos = "http://localhost:8080/CafePage/main.jsp";
-	let dd = window.location.href;
-	
-	if(dd == dd){
-		location.href="Cafe/CafeMain.jsp";
-	}
-	else{
-		location.href="main.jsp";
-	}
-}*/
 
 function login(){
 	
@@ -163,6 +151,7 @@ function passwd_keyup(){ // 키보드 올라올떄 마다
 }
 
 
+
 function duplicate(){
 	
 		isCheck = true;
@@ -175,16 +164,16 @@ function duplicate(){
 			success : function(data){ // yes 나  no 자리들어옴
 				
 				if($('input[name="id"]').val() == ""){
-					$('#idmessage').html('<font color=red>아이디 입력 누락하였습니다.</font>');
+					$('#idmessage').html('<font color=red>ID 누락</font>');
 					$('#idmessage').show();
 				}
 				else if($.trim(data) == 'YES'){ // trim : data의 값의 여백을 지움(앞뒤로 다 )
-					$('#idmessage').html('<font color=red>사용 가능합니다.</font>');
+					$('#idmessage').html('<font color=red>사용 가능</font>');
 					$('#idmessage').show();
 					use = "possible";
 				}
 				else{
-					$('#idmessage').html('<font color=red>이미 사용중인 아이디 입니다.</font>');
+					$('#idmessage').html('<font color=red>중복된 ID</font>');
 					$('#idmessage').show();
 					use = "impossible";
 				}	
@@ -235,7 +224,8 @@ setInterval(function() {
     .fadeIn(1000)
     .end()
     .appendTo('#slideshow');
-},  3000);
+},  5000);
+
 
 
 

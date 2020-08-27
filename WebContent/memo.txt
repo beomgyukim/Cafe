@@ -37,6 +37,33 @@ col phone3 for 9999
 
 select * from mem;
 
+--예약 테이블
+drop sequence rseq ;
+
+create sequence rseq  
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+ 
+drop table rmem;
+create table rmem(
+	rno number primary key,
+	rname varchar2(30) not null,
+	rnum varchar2(30) not null,
+	rdate varchar2(30) not null,
+	rtime varchar2(30) not null		
+);
+
+commit;
+
+
+col name for  a12
+col id for a12
+col password for a12
+
 
 
 

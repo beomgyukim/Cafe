@@ -12,8 +12,6 @@ findidPro.jsp<br><br>
 	int phone2 = Integer.parseInt(request.getParameter("phone2"));
 	int phone3 = Integer.parseInt(request.getParameter("phone3"));
 	
-	System.out.println("name:" + name);
-	
 	MemberDao mdao = MemberDao.getInstance();
 	MemberBean mb = mdao.getMemberByph(name,phone1,phone2,phone3);
 	
