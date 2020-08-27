@@ -8,7 +8,7 @@
 <%@ include file="top.jsp"%>
 <%
   	String memname = (String)session.getAttribute("memname");
- %>
+%>
 
 <div class="boxHeight" id="mainImg">
 	<div id="imgshow_main">
@@ -18,9 +18,6 @@
 		<div id="slideshow">
 			<div>
 				<img src="img/coffee1.PNG">
-			</div>
-			<div>
-				<img src="img/coffee2.PNG">
 			</div>
 			<div>
 				<img src="img/smoredeep.jpg">
@@ -39,6 +36,9 @@
 			</div>
 			<div>
 				<img src="img/cookie2.PNG">
+			</div>
+			<div>
+				<img src="img/coffee2.PNG">
 			</div>
 		</div>
 	</div>
@@ -126,9 +126,9 @@
 						<% 
 							String als_date = "";
 							String sub_date = "";
-						for(int j=0; j<al.size();j++){
+							for(int j=0; j<al.size();j++){
 							als_date += al.get(j).getRdate();
-						}
+							}
 						
   							for(int i=0;i<al.size();i++){
   								String al_date = al.get(i).getRdate();	      						
