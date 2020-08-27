@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import member.MemberBean;
 
@@ -77,28 +78,37 @@ public class RevatDao {
 		return cnt;
 	}
 	
-	public RevatBean getRevatInfo(String rname,String rnum,String rdate,String rtime){
+	public ArrayList<RevatBean> getAllMebers(){
 		getConnection();
-		String sql = "select * from rmem where rname=? and rnum=? and rdate=? and rtime=?";
-		RevatBean rb = null;
+		ArrayList<RevatBean> lists = new ArrayList<RevatBean>();
+		String sql = "select * from rmem order by rno";
+		
 		try {
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, rname);
-			ps.setString(2, rnum);
-			ps.setString(3, rdate);
-			ps.setString(4, rtime);
+			
 			rs = ps.executeQuery();
-			if(rs.next()) {
-				rb = new RevatBean();
-				rb.setRname(rs.getString("rname"));
-				rb.setRnum(rs.getString("rnum"));
-				rb.setRdate(rs.getString("rdate"));
-				rb.setRtime(rs.getString("rtime"));
+			
+			while(rs.next()) {
+				int rno = rs.getInt("rno");
+				String rname = rs.getString("rname");
+				String rnum = rs.getString("rnum");
+				String rdate = rs.getString("rdate");
+				String rtime = rs.getString("rtime");
+				
+				RevatBean rb = new RevatBean();
+				rb.setRno(rno);
+				rb.setRname(rname);
+				rb.setRnum(rnum);
+				rb.setRdate(rdate);
+				rb.setRtime(rtime);
+				
+				
+				lists.add(rb);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("getAllMebers");
 			e.printStackTrace();
-		} finally {
+		}finally {
 			try {
 				if(rs != null) {
 					rs.close();
@@ -113,7 +123,8 @@ public class RevatDao {
 				
 			}
 		}
-		return rb;
+		
+		return lists;
 	}
 }
 
