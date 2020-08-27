@@ -1,0 +1,234 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+body {
+    line-height: 1;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+ol, ul {
+   list-style: none;
+}
+blockquote, q {
+   quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+   content: '';
+   content: none;
+}
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+a{text-decoration: none}
+
+span{
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.card-body{ 
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+#slideshow { 
+    margin: 50px auto; 
+    position: relative; 
+    width: 900px; 
+    height: 1000px; 
+    padding: 10px; 
+    top : -50px;
+}
+
+#slideshow > div { 
+    position: absolute; 
+    top: 70px; 
+    left: 10px; 
+    right: 10px; 
+    bottom: 10px; 
+}
+#slideshow img{
+	width:75%;
+}
+.loginBox{
+	float:right;	
+}
+
+.loginsbox li:nth-of-type(1){
+	padding-top: 16px;
+}
+
+.boxHeight{
+	height: 864px;
+}
+#imgshow_main img{
+	float: left;
+    width: 545px;
+    margin-top: 70px;
+    margin-left: 250px;
+}
+#mainImg{
+	position:relative;
+
+}
+#imgshow{
+	position:absolute;
+	left:50%;
+}
+.revatbox{
+	width:50%;
+	float:left;
+	height:100%;
+	position:relative;
+}
+
+.revatdiv{
+	width: 700px;
+    
+}
+
+.revatdiv ul{
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+
+.revatbtn{
+	color:red;
+	border : 1px solid red;
+}
+
+#mainCont iframe{
+	width: 50%;
+    margin-left: 25%;
+    margin-top : 50px;
+}
+
+.revat_ab{
+	position : absolute;
+	top : 150px;
+	left : 150px;
+}
+
+.revat_ableft{
+	float : left;
+	width : 49%;
+	
+}
+
+.revat_abright{
+	float : left;
+	width : 49%;
+}
+
+.revat_ableft p{
+	margin-left:90%;
+	margin-bottom:20%;
+	font-size:20px;
+}
+.revat_ableft li{
+	margin:20% 10%;
+}
+.revat_list li{
+	margin:15% 10%;
+}
+.revat_list{
+	position:relative;
+}
+.revatdiv li{
+	width:110px;
+	padding: 30px 30px;
+	font-size: 1rem;
+	border : 1px solid #ddd;
+	cursor: pointer;
+	background-color:#fff;
+}
+
+.revattable {
+	margin-top: 130px;
+}
+
+.revattable th{
+	text-align : center;
+}
+
+.revattable th:nth-of-type(1){
+	font-size: 20px;
+}
+
+
+
+.contbox{
+	margin-top : 50px;
+	margin-left : 750px;
+}
+
+.revat_list li:nth-child(5){
+	position:absolute;
+	bottom:-50% ;
+	left:-20%;
+}
+
+.footerbox{
+	margin: 0 auto;
+    width: 25%;
+}
+
+.footerbox p{
+	margin : 10px 0;
+	text-align : left;
+	font-size : 15px;
+	
+}
+
+.buttonbox{
+	margin: 0 auto;
+    width: 48%;
+    margin-top: 40px;
+}
+
+.buttonboxdiv{
+	float:left;
+	margin-right: 80px;
+}
+
+.maintablebox td{
+	text-align : center;
+}
+
+.tbodybox{
+	text-align : center;
+}
+
+#pwbox{
+	margin-top : 15px;
+}
+#id_box{
+	margin-top : 15px;
+	text-align : center;
+}

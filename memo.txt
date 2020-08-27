@@ -1,0 +1,73 @@
+
+
+-- 회원 테이블 생성
+drop sequence mseq ;
+
+create sequence mseq  
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+ 
+drop table mem;
+create table mem(
+	no number primary key,
+	name varchar2(30) not null,
+	id varchar2(12) not null,
+	password varchar2(12),
+	repassword varchar2(12),
+	phone1 number not null,
+	phone2 number not null,
+	phone3 number not null,
+	email varchar2(30)			
+);
+
+insert into mem(no, name, id, password, repassword, phone1, phone2, phone3) values(mseq.nextval, '어드민', 'admin','1234', '1234', 010,1111,1111);
+commit;
+
+
+col name for  a12
+col id for a12
+col password for a12
+col phone1 for 9999
+col phone2 for 9999
+col phone3 for 9999
+
+select * from mem;
+
+--예약 테이블
+drop sequence rseq ;
+
+create sequence rseq  
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+ 
+drop table rmem;
+create table rmem(
+	rno number primary key,
+	rname varchar2(30) not null,
+	rnum varchar2(30) not null,
+	rdate varchar2(30) not null,
+	rtime varchar2(30) not null		
+);
+
+commit;
+
+
+col name for  a12
+col id for a12
+col password for a12
+
+
+
+
+
+
+
+

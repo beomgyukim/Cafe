@@ -16,7 +16,7 @@
 				<div class="col-2">
     			<input type="button" id="id_check" onClick="return duplicate()" class="btn btn-secondary" value="Duplicate check">
 				</div>
-				<div class="col-2">
+				<div class="col-2" id="id_box">
 				<span id="idmessage" style="display:none;"></span>
 				</div>
 			</div>
@@ -25,7 +25,7 @@
 				<div class="col-4">
 					<input type="password" name="password" onBlur="return pwcheck()" class="btn btn-secondary"> 
 				</div>
-				<div class="col-4">영문 소문자/숫자 조합 3~8자</div>
+				<div class="col-4" id="pwbox">영문 소문자/숫자 조합 3~8자</div>
 			</div>
 			<div class="row mt-2">
 				<div class="col-4">Confirm Password</div>

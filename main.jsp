@@ -23,6 +23,21 @@
 				<img src="img/coffee2.PNG">
 			</div>
 			<div>
+				<img src="img/smoredeep.jpg">
+			</div>
+			<div>
+				<img src="img/coffee5.jpg">
+			</div>
+			<div>
+				<img src="img/coffee6.jpg">
+			</div>
+			<div>
+				<img src="img/juice1.jpg">
+			</div>
+			<div>
+				<img src="img/cookie1.jpg">
+			</div>
+			<div>
 				<img src="img/cookie2.PNG">
 			</div>
 		</div>
@@ -160,6 +175,8 @@ $("input[name='rnum']").focusout(function(){
 			alert("현재 날짜 이후를 선택하세요");
 		}
 	});
+	
+	
 	
 	
 

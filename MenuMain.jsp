@@ -5,7 +5,7 @@
 	<style type="text/css">
 		.mainbox{
 			margin : 0 auto;
-			margin-bottom : 5%;
+			margin-bottom : 4%;
 			width : 50%;
 			text-align: center;
 			
