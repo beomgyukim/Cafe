@@ -6,6 +6,7 @@
 findidPro.jsp<br><br>
 
 <%
+	String pp="";
 	request.setCharacterEncoding("UTF-8");
 	String name = request.getParameter("name");
 	int phone1 = Integer.parseInt(request.getParameter("phone1"));
